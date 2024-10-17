@@ -64,6 +64,8 @@ echo -e "${OK} IP Address ( ${green}$IP${NC} )"
 fi
 echo ""
 read -p "$( echo -e "Press ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} For Starting Installation") "
+echo -e "\e[32mloading Please wait...\e[0m"
+sleep 7
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
@@ -122,9 +124,9 @@ function print_ok() {
 echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
 function print_install() {
-echo -e "${green}----------------------------------------------------------${FONT}"
+echo -e "${green}——————————————————————————${FONT}"
 echo -e "${YELLOW} ☘️ $1 ${FONT}"
-echo -e "${green}----------------------------------------------------------${FONT}"
+echo -e "${green}——————————————————————————${FONT}"
 sleep 1
 }
 function print_error() {
@@ -132,9 +134,9 @@ echo -e "${ERROR} ${REDBG} $1 ${FONT}"
 }
 function print_success() {
 if [[ 0 -eq $? ]]; then
-echo -e "${green}----------------------------------------------------------${FONT}"
+echo -e "${green}——————————————————————————${FONT}"
 echo -e "${Green} ☘️ $1 berhasil dipasang"
-echo -e "${green}----------------------------------------------------------${FONT}"
+echo -e "${green}——————————————————————————${FONT}"
 sleep 2
 fi
 }
@@ -262,6 +264,7 @@ echo -e ""
 read -p "   INPUT YOUR DOMAIN :   " host1
 echo -e "\e[32mloading memeriksa domain ...\e[0m"
 sleep 5
+echo -e " DOMAIN ANDA : $host1"
 echo -e "   \e[1;32mPlease Enter Your Name $NC"
 read -p "   Masukan User Script 12 Karakter: " nama
 echo "IP=${host1}" >> /var/lib/kyt/ipvps.conf
@@ -973,22 +976,25 @@ sudo hostnamectl set-hostname $username
 clear
 echo -e ""
 echo -e ""
-echo -e "\033[96m==========================\033[0m"
-echo -e "\033[92m      INSTALL SUCCES      \033[0m"
-echo -e "\033[96m==========================\033[0m"
+echo -e "\033[96m————————————————————————————————\033[0m"
+echo -e "\033[92m      Terimakasih telah menggunakan     \033[0m"
+echo -e "\033[92m      Script premium by NF TUNNEL     \033[0m"
+echo -e "\033[96m————————————————————————————————\033[0m"
 echo -e ""
 sleep 3
 clear
-echo -e "\033[96m==========================\033[0m"
-echo -e "\033[92m      TERIMA KASIH TELAH MENGGUNAKAN    \033[0m"
-echo -e "\033[96m==========================\033[0m"
-sleep 3
+echo -e "\033[96m————————————————————————————————\033[0m"
+echo -e "\033[92m       username  : $username \033[0m"
+echo -e "\033[92m       ip          : $IP \033[0m"
+echo -e "\033[92m       expired     : $expx \033[0m"
+echo -e "\033[96m————————————————————————————————\033[0m"
+sleep 4
 clear
-echo -e "\033[96m==========================\033[0m"
+echo -e "\033[96m————————————————————————————————\033[0m"
 echo -e "\033[92m      JIKA MENEMUKAN BUG REPORT \033[0m"
 echo -e "\033[92m      LANGSUNG KE OWNER NF TUNNEL \033[0m"
 echo -e "\033[92m      CONTACT OWNER t.me/ceria_shop\033[0m"
-echo -e "\033[96m==========================\033[0m"
+echo -e "\033[96m————————————————————————————————\033[0m"
 sleep 5
 echo -e "\033[93;1m Wait inn 4 sec...\033[0m"
 sleep 4
@@ -1026,6 +1032,6 @@ echo -e "${tyblue}│${pth}   - BadVPN 3                : 7300          ${tyblue
 #echo -e "${tyblue}│${pth}   - Proxy Squid             : 3128          ${tyblue}│${NC}"
 echo -e "${tyblue}└─────────────────────────────────────────────┘"
 echo ""
-read -p "Press [ Enter ]  TO MENU"
+read -p "Press [ Enter ]  TO Reboot"
 clear
-menu
+reboot
